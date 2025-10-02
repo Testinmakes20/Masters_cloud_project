@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: product-service
-          image: your-dockerhub-username/product-service:1.0
+          image: pjsweden2025/product-service:1.0
           env:
             - name: DB_HOST
               value: postgres-service

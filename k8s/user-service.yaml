@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: user-service
-          image: your-dockerhub-username/user-service:1.0   # update with your Docker Hub username
+          image: pjsweden2025/user-service:1.0   # update with your Docker Hub username
           env:
             - name: DB_HOST
               value: postgres-service
