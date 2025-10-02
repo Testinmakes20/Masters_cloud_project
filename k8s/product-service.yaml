@@ -17,13 +17,13 @@ spec:
           image: your-dockerhub-username/product-service:1.0
           env:
             - name: DB_HOST
-              value: postgres
+              value: postgres-service
             - name: DB_NAME
               value: ecommerce
             - name: DB_USER
-              value: user
+              value: admin
             - name: DB_PASSWORD
-              value: password
+              value: admin123
           ports:
             - containerPort: 8001
 ---
