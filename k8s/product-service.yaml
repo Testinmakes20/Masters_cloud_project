@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: product-service
-          image: pjsweden2025/product-service:1.0
+          image: pjsweden2025/product-service:latest
           env:
             - name: DB_HOST
               value: postgres-service
