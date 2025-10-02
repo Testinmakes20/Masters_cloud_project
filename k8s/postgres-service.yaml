@@ -8,5 +8,5 @@ spec:
   selector:
     app: postgres
   ports:
-    - port: 5432
-      targetPort: 5432
+    - port: 8001
+      targetPort: 8001
