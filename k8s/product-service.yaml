@@ -25,7 +25,7 @@ spec:
             - name: DB_PASSWORD
               value: admin123
           ports:
-            - containerPort: 8001
+            - containerPort: 5000
 ---
 apiVersion: v1
 kind: Service
@@ -36,5 +36,5 @@ spec:
   selector:
     app: product-service
   ports:
-    - port: 8001
+    - port: 5000
       targetPort: 5000
