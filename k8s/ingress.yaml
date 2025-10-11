@@ -15,13 +15,13 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: product
+            name: product-service
             port:
               number: 8001
       - path: /users/?(.*)
         pathType: Prefix
         backend:
           service:
-            name: user
+            name: user-service
             port:
               number: 8000
