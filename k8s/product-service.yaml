@@ -37,4 +37,4 @@ spec:
     app: product-service
   ports:
     - port: 8001
-      targetPort: 8001
+      targetPort: 5000
