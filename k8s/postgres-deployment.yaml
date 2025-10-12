@@ -18,7 +18,7 @@ spec:
         - name: postgres
           image: postgres:14
           ports:
-            - containerPort: 5000
+            - containerPort: 5432
           env:
             - name: POSTGRES_DB
               value: ecommerce
