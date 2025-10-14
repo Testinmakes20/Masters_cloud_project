@@ -32,9 +32,10 @@ kind: Service
 metadata:
   name: product-service
 spec:
-  type: LoadBalancer
+  type: NodePort 
   selector:
     app: product-service
   ports:
     - port: 5000
       targetPort: 5000
+      nodePort: 31117 
