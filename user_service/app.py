@@ -4,6 +4,15 @@ import psycopg2
 from fastapi import HTTPException
 from fastapi.responses import HTMLResponse
 import os
+from fastapi.middleware.cors import CORSMiddleware
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # during development allow all
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 app = FastAPI()
 
