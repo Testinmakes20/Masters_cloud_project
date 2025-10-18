@@ -21,8 +21,6 @@ async def root():
         html_content = file.read()
     return HTMLResponse(content=html_content, status_code=200)
 
-
-
 def get_conn():
     return psycopg2.connect(host=DB_HOST, database=DB_NAME,
                             user=DB_USER, password=DB_PASSWORD)
