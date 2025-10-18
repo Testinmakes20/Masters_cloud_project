@@ -8,13 +8,6 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - apiGroups: [""]
-    resources:
-    - endpoints
-    verbs:
-      - get
-      - list
-      - watch
   - host: ecommerce.local
     http:
       paths:
