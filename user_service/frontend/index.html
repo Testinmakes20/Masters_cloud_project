@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User List</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+  </style>
+</head>
+<body>
+  <h1>Users</h1>
+  <ul id="user-list"></ul>
+
+  <script>
+    fetch('/users')
+      .then(response => response.json())
+      .then(users => {
+        const ul = document.getElementById('user-list');
+        users.forEach(user => {
+          const li = document.createElement('li');
+          li.textContent = `${user.name} (${user.email})`;
+          ul.appendChild(li);
+        });
+      })
+      .catch(error => {
+        console.error('Error fetching users:', error);
+      });
+  </script>
+</body>
+</html>
