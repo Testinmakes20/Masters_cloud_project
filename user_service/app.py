@@ -6,6 +6,8 @@ from fastapi.responses import HTMLResponse
 import os
 from fastapi.middleware.cors import CORSMiddleware
 
+app = FastAPI()
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],  # during development allow all
@@ -14,7 +16,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app = FastAPI()
 
 DB_HOST = os.getenv("DB_HOST", "postgres-service")
 DB_NAME = os.getenv("DB_NAME", "ecommerce")
