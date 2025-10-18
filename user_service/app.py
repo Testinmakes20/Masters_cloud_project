@@ -1,5 +1,7 @@
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
+import psycopg2
+from fastapi import HTTPException
 from fastapi.responses import HTMLResponse
 import os
 
