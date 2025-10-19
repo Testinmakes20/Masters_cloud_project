@@ -65,3 +65,32 @@ def list_users():
     finally:
         cur.close()
         conn.close()
+
+@app.get("/users/{user_id}")
+def get_user(user_id: int):
+    conn = get_conn()
+    cur = conn.cursor()
+    try:
+        cur.execute("SELECT id, name, email FROM users WHERE id = %s", (user_id,))
+        row = cur.fetchone()
+        if row:
+            return {"id": row[0], "name": row[1], "email": row[2]}
+        raise HTTPException(status_code=404, detail="User not found")
+    finally:
+        cur.close()
+        conn.close()
+@app.delete("/users/{user_id}")
+def delete_user(user_id: int):
+    conn = get_conn()
+    cur = conn.cursor()
+    try:
+        cur.execute("DELETE FROM users WHERE id = %s RETURNING id", (user_id,))
+        deleted = cur.fetchone()
+        if not deleted:
+            raise HTTPException(status_code=404, detail="User not found")
+        conn.commit()
+        return {"message": f"User {user_id} deleted"}
+    finally:
+        cur.close()
+        conn.close()
+
